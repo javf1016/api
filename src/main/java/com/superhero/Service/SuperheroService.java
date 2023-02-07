@@ -3,6 +3,8 @@ package com.superhero.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.superhero.Entity.Superhero;
@@ -21,6 +23,7 @@ public class SuperheroService {
     }
     
     //Find superhero by Id
+    @Cacheable(value = "superheroes", key = "#id")
     public Superhero getSuperheroById(Long id) {
         return superheroRepository.findById(id).orElseThrow(() -> new SuperheroNotFoundException(id));
     }
@@ -43,6 +46,7 @@ public class SuperheroService {
     }
     
     //Delete superhero by Id
+    @CacheEvict(value = "superheroes", key = "#id")
     public void deleteSuperhero(Long id) {
         Superhero superhero = superheroRepository.findById(id)
         		.orElseThrow(() -> new SuperheroNotFoundException(id));
