@@ -18,8 +18,11 @@ import com.superhero.Annotation.Timed;
 import com.superhero.Entity.Superhero;
 import com.superhero.Service.SuperheroService;
 
+import io.swagger.annotations.Api;
+
 @RestController
 @RequestMapping("/api/superheroes")
+@Api(value = "Superhero Management System", description = "Operations related to Superheroes")
 public class SuperheroController {
 
 	@Autowired
