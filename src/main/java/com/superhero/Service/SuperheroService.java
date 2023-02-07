@@ -42,6 +42,7 @@ public class SuperheroService {
         return updatedSuperhero;
     }
     
+    //Delete superhero by Id
     public void deleteSuperhero(Long id) {
         Superhero superhero = superheroRepository.findById(id)
         		.orElseThrow(() -> new SuperheroNotFoundException(id));
