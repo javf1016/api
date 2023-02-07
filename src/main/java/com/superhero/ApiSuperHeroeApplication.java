@@ -1,4 +1,4 @@
-package com.superheroe.api;
+package com.superhero;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
