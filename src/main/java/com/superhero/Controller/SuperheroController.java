@@ -52,7 +52,7 @@ public class SuperheroController {
 	}
 	
 	@Timed
-    @PutMapping("/{id}")
+    @PutMapping("heroupdate/{id}")
     public Superhero updateSuperhero(@PathVariable Long id, @RequestBody Superhero superheroDetails) {
         return superheroService.updateSuperhero(id, superheroDetails);
     }
