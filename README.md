@@ -1,6 +1,15 @@
 # api
 apiSuperheroes
 
+Para abrir el H2 
+
+* Driver Class:	org.h2.Driver
+* JDBC URL:	jdbc:h2:mem:~/superhero
+* User Name: sa
+* Password:	
+
+* http://localhost:8000/h2
+
 Buscar por Id
 http://localhost:8000/api/superheroes/hero/2
 
